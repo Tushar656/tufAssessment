@@ -62,7 +62,7 @@ export default function Dashboard() {
 
         if(isEditer) {
             try {
-                await axios.patch(`http://localhost:8000/api/banner/${editerSlideId}`, {
+                await axios.patch(`https://banner-skzp.onrender.com/api/banner/${editerSlideId}`, {
                     title,
                     description,
                     image: imageUrlToUse,
@@ -85,7 +85,7 @@ export default function Dashboard() {
             }
         } else {
             try {
-                await axios.post('http://localhost:8000/api/banner/create', {
+                await axios.post('https://banner-skzp.onrender.com/api/banner/create', {
                     title,
                     description,
                     image: imageUrlToUse,
@@ -110,7 +110,7 @@ export default function Dashboard() {
 
     const fetchBanners = async () => {
         try {
-            const response = await axios.get('http://localhost:8000/api/banner/');
+            const response = await axios.get('https://banner-skzp.onrender.com/api/banner/');
             const bannersData = response.data;
 
             const sortedBanners = bannersData.sort((a, b) => {
@@ -155,7 +155,7 @@ export default function Dashboard() {
         try {
             const banner = banners.find((banner) => banner._id === id);
             console.log(banner.isHidden);
-            await axios.patch(`http://localhost:8000/api/banner/${id}`, {
+            await axios.patch(`https://banner-skzp.onrender.com/api/banner/${id}`, {
                 isHidden: !banner.isHidden
             });
             await fetchBanners();

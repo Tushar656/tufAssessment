@@ -11,7 +11,7 @@ export default function Slider() {
 
     const fetchBanners = async () => {
         try {
-            const response = await axios.get('http://localhost:8000/api/banner/');
+            const response = await axios.get('https://banner-skzp.onrender.com/api/banner/');
             const bannersData = response.data;
 
             const filteredBanners = bannersData.filter((banner) => {
