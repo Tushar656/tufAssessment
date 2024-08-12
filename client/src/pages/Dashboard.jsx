@@ -201,7 +201,7 @@ export default function Dashboard() {
 
     return (
         <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-6">
-            <h2 className="text-2xl font-semibold text-gray-700 mb-4">Create New Banner</h2>
+            <h2 className="text-2xl font-semibold text-gray-700 mb-4">{isEditer ? 'Edit the Banner' : 'Create New Banner'}</h2>
 
             <form className="space-y-4" onSubmit={submitForm}>
                 <div>
@@ -272,6 +272,7 @@ export default function Dashboard() {
 
                                 <div>
                                     <p className="text-gray-700 font-medium">{banner.title}</p>
+                                    <p className="text-green-400 text-sm">Created At: {banner.startAt}</p>
                                     <p className={`text-sm ${isExpired ? 'text-red-500' : 'text-gray-500'}`}>{remainingTime}</p>
                                 </div>
                             </div>
