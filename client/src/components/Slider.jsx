@@ -75,7 +75,7 @@ export default function Slider() {
                         <Timer slide={slides[currentIndex]} />
                     </div>
                     <div className="absolute bottom-10 w-4/5 left-1/2 transform -translate-x-1/2 text-center text-xl font-bold text-white bg-black/70 px-4 py-2 rounded-lg shadow-md leading-relaxed tracking-wide">
-                        {slides[currentIndex].title}
+                        {slides[currentIndex].description}
                     </div>
                 </div>
                 : <div className='w-full h-full flex items-center justify-center text-2xl font-bold text-gray-500'>No Banners Available</div>}
